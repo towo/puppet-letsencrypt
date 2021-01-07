@@ -171,6 +171,7 @@ define letsencrypt::certonly (
     *           => $exec_ensure,
     path        => $facts['path'],
     environment => $execution_environment,
+    timeout     => 600,
     provider    => 'shell',
     require     => [
       Class['letsencrypt'],
